@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Globito a reventar</title>
+
+</head>
+<body>
+    <p>🎈</p>
+
+    <script>
+        const p = document.querySelector('p')
+        let size;
+        function setSize(newSize) {
+            size = newSize
+            p.style.fontSize = `${size}px`
+        }
+        setSize(20)
+
+        window.addEventListener('keydown', function(event){
+            event.preventDefault()
+
+            if(size > 80){
+                p.textContent = '🥰'
+                window.removeEventListener('keydown', function(event){
+                    event.preventDefault()
+                })
+            } else {
+            if(event.key === 'ArrowUp'){
+                setSize(size * 1.10)
+            }
+            if(event.key === 'ArrowDown'){
+                setSize(size / 1.10)
+            }
+        }
+    })
+    </script>
+</body>
+</html>
